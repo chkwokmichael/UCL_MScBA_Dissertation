@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Flask CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style type="text/css">
+      .navbar-custom {
+      background: #14143e;
+      height: 4rem;
+      }
+      h1 {
+        color: #14143e;
+      }
+      .navbar-custom a {
+        text-decoration: none;
+        color: white;
+        vertical-align: middle;
+        display: inline !important;
+      }
+    </style>
+
+    <title>Be The Business - Recommender System</title>
+  </head>
+  <body>
+
+    <header>
+      <!-- Image and text -->
+      <div class="container-fluid navbar-custom">
+        
+      <h1>
+        <a class="m-3" href="https://improve.bethebusiness.com/">
+            <img id="logo" src="{{url_for('static', filename='img/logo_white.png')}}" width="150" height="50">
+        </a>  
+        <a href="{{url_for('home')}}">Resources Recommender System</a>
+      </h1>
+      </div>
+      <div class="container my-3 text-center">
+      <h3>Input your problem statements and the system will direct you to the right resources!</h3>
+      
+      </div>
+    </header>
+
+    <div class="ml-container mx-auto text-center" style="width: 95%;">
+
+      <form action="{{ url_for('predict')}}" method="POST">
+      <p>Enter Your Business Problem Here</p>
+      <!-- <input type="text" name="comment"/> -->
+      <textarea name="message" rows="4" cols="50"></textarea>
+      <br/>
+
+      <button type="submit" class="btn btn-primary" value="predict">Get resources</button>
+        
+      </form>
+      
+    </div>
+
+    <div>
+      <hr>
+    </div>
+
+    <h3 class="text-center">Available Resources</h3>
+    <div class="mx-auto container" style="width: 95%;">
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Digital Readiness</h6>
+            <div class="card-body">
+              <h5 class="card-title">Creating an effective remote workforce</h5>
+              <p class="card-text">Remote working is nothing new, but before coronavirus it was much more the realm of freelancers or more digitally-focused businesses. Businesses forced into remote working patterns are now …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Digital Readiness</h6>
+            <div class="card-body">
+              <h5 class="card-title">Setting your objective</h5>
+              <p class="card-text">Beginning the adoption of any new technology should start with being clear about what you want the software to do or the problem you’d like it to fix. That will help direct any future decisions you need to make …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">People & Team</h6>
+            <div class="card-body">
+              <h5 class="card-title">Improve the way you performance manage staff</h5>
+              <p class="card-text">At the heart of it, performance management involves a business and its employee getting the most out of the relationship. For the business, the process involves ensuring it is able to best leverage the skills …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">People & Team</h6>
+            <div class="card-body">
+              <h5 class="card-title">An introduction to improving hiring and onboarding practices</h5>
+              <p class="card-text">Businesses need strong hiring and onboarding practices to attract and retain talent that’s moving around more than ever.The current challenges faced by business leaders are indicative …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Planning</h6>
+            <div class="card-body">
+              <h5 class="card-title">Making an informed decision about investing in your business</h5>
+              <p class="card-text">Investing is a big decision and many business leaders are hesitant because it might not go to plan. But, without investment, some areas can become ineffective and stagnate. By talking to …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Planning</h6>
+            <div class="card-body">
+              <h5 class="card-title">Predict future trends in your market</h5>
+              <p class="card-text">Market disruptors, new technology and cultural shifts can all have an impact on business development, but business leaders need to focus on predicting future trends, rather than just reacting to change. This starts with keeping yourself …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Sales & Growth</h6>
+            <div class="card-body">
+              <h5 class="card-title">Identifying growth opportunities in your current customer base</h5>
+              <p class="card-text">Starting at the bottom of your sales funnel is a great way to increase revenue. What new opportunities can you find to help your existing customers? Market research is easier because …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Sales & Growth</h6>
+            <div class="card-body">
+              <h5 class="card-title">An introduction to benchmarking your business against competitors</h5>
+              <p class="card-text">Finding out exactly how your business shapes up against your competitors is key to ensuring its success in a crowded market. To keep your business sustainable, it’s crucial to be …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Leadership & Strategy</h6>
+            <div class="card-body">
+              <h5 class="card-title">An introduction to getting better at delegating and giving your team autonomy</h5>
+              <p class="card-text">As businesses grow many leaders find it difficult to give up control. However, giving your team autonomy benefits both you and your staff. Many business owners like to control …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card" style="height: 15rem;">
+            <h6 class="card-header text-secondary">Leadership & Strategy</h6>
+            <div class="card-body">
+              <h5 class="card-title">Taking action to overcome a problem in your business</h5>
+              <p class="card-text">If you think you’ve found a potential problem in your business, the next step is to decide on the actions you’re going to take in response. What you decide to do – and how quickly you do it – will be pivotal …</p>
+              <a href="#" class="btn btn-primary">View resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center my-4 text-secondary">
+      <p>Copyright © 2021 Be the Business</p>
+    </div>
+    
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

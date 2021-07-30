@@ -1,0 +1,21 @@
+.rating {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-top: 0px;
+  text-align: center;
+}
+.like,
+.dislike {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.dislike:hover,
+.like:hover {
+  color: #2EBDD1;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
